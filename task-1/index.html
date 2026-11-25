@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sprout – Daily Habit Garden</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="brand">
+      <h1>Sprout</h1>
+      <p>Water a habit each day and watch it grow into a flower.</p>
+    </div>
+    <div class="tools">
+      <div class="ring" role="img" aria-label="Habits watered today">
+        <svg width="96" height="96" viewBox="0 0 64 64" aria-hidden="true">
+          <circle cx="32" cy="32" r="26" class="track"/>
+          <circle id="arc" cx="32" cy="32" r="26" class="arc"/>
+        </svg>
+        <b id="count">0/0</b>
+      </div>
+      <button id="theme" class="ghost" type="button" aria-label="Switch between day and night">Night</button>
+    </div>
+  </header>
+
+  <form id="add" autocomplete="off">
+    <label class="sr" for="name">New habit</label>
+    <input id="name" maxlength="30" placeholder="New habit, e.g. Read 20 pages" required>
+    <div class="swatches" role="radiogroup" aria-label="Flower colour">
+      <label><input type="radio" name="c" value="#E8618C" checked><span style="--s:#E8618C"></span></label>
+      <label><input type="radio" name="c" value="#8E7CC3"><span style="--s:#8E7CC3"></span></label>
+      <label><input type="radio" name="c" value="#F28A3B"><span style="--s:#F28A3B"></span></label>
+      <label><input type="radio" name="c" value="#4FA3E0"><span style="--s:#4FA3E0"></span></label>
+    </div>
+    <button class="solid" type="submit">Plant habit</button>
+  </form>
+
+  <nav class="filters" aria-label="Filter habits">
+    <button data-f="all" aria-pressed="true">All</button>
+    <button data-f="todo" aria-pressed="false">To water</button>
+    <button data-f="done" aria-pressed="false">Watered</button>
+  </nav>
+
+  <p id="msg" class="msg" aria-live="polite"></p>
+  <section id="garden" class="garden"></section>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

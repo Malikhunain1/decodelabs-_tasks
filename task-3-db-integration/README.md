@@ -43,5 +43,4 @@ Node.js, Express, MongoDB Atlas, Mongoose
 - Invalid IDs return 400, missing records return 404
 - Secrets kept in `.env` (not committed)
 
-## Screenshots
-Add your Postman/Atlas screenshots here.
+
