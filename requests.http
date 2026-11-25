@@ -1,0 +1,29 @@
+### Create (works with the VS Code "REST Client" extension)
+POST http://localhost:5000/api/applications
+Content-Type: application/json
+
+{ "company": "Systems Ltd", "jobTitle": "Junior MERN Developer", "location": "Lahore" }
+
+### Read all
+GET http://localhost:5000/api/applications
+
+### Read all (filtered)
+GET http://localhost:5000/api/applications?status=Interview
+
+### Read one (replace the ID)
+GET http://localhost:5000/api/applications/PASTE_ID_HERE
+
+### Update (replace the ID)
+PUT http://localhost:5000/api/applications/PASTE_ID_HERE
+Content-Type: application/json
+
+{ "status": "Interview", "interviewDate": "2026-12-05" }
+
+### Delete (replace the ID)
+DELETE http://localhost:5000/api/applications/PASTE_ID_HERE
+
+### Error test: missing company (expect 400)
+POST http://localhost:5000/api/applications
+Content-Type: application/json
+
+{ "jobTitle": "Developer" }
